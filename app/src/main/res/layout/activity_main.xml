@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/myCoordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_x="16dp"
+    android:layout_y="16dp"
+    tools:context=".MainActivity"
+    android:background="@color/colorFondo">
+
+  <LinearLayout
+      android:id="@+id/llmain"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      >
+    <include
+        android:id="@+id/miActionBar"
+        layout="@layout/actionbar"
+        ></include>
+    <TextView
+        android:id="@+id/tvTituloFavoritos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lista de Mascotas"
+        android:textSize="20dp"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMascotas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/miActionBar">
+      <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+          android:id="@+id/sfiMiIndicadorRefresh"
+          android:layout_width="match_parent"
+          android:layout_height="200dp">
+      <ListView
+          android:id="@+id/lstMilista"
+          android:layout_width="match_parent"
+          android:layout_height="200dp">
+      </ListView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </RelativeLayout>
+  </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
